@@ -1,0 +1,75 @@
+1. Explain public static void main(String args[]) in Java.
+Main_function
+Unlike any other programming language like C, C++, etc. In Java, we declared the main function as a public static void main (String args[]). The meanings of the terms are mentioned below:
+public: the public is the access modifier responsible for mentioning who can access the element or the method and what is the limit.  It is responsible for making the main function globally available. It is made public so that JVM can invoke it from outside the class as it is not present in the current class.
+static: static is a keyword used so that we can use the element without initiating the class so to avoid the unnecessary allocation of the memory. 
+void: void is a keyword and is used to specify that a method doesn’t return anything. As the main function doesn’t return anything we use void.
+main: main represents that the function declared is the main function. It helps JVM to identify that the declared function is the main function.
+String args[]: It stores Java command-line arguments and is an array of type java.lang.String class.
+
+2. What is Java String Pool?
+A Java String Pool is a place in heap memory where all the strings defined in the program are stored. A separate place in a stack is there where the variable storing the string is stored. Whenever we create a new string object, JVM checks for the presence of the object in the String pool, If String is available in the pool, the same object reference is shared with the variable, else a new object is created.
+
+Java-String-Pool-768
+
+Example:
+
+String str1="Hello";
+// "Hello" will be stored in String Pool
+// str1 will be stored in stack memory
+
+3. What will happen if we declare don’t declare the main as static?
+We can declare the main method without using static and without getting any errors. But, the main method will not be treated as the entry point to the application or the program.
+
+4. What are Packages in Java?
+Packages in Java can be defined as the grouping of related types of classes, interfaces, etc providing access to protection and namespace management.
+
+5. Why Packages are used?
+Packages are used in Java in order to prevent naming conflicts, control access, and make searching/locating and usage of classes, interfaces, etc easier.
+
+6. What are the advantages of Packages in Java?
+There are various advantages of defining packages in Java.
+Packages avoid name clashes.
+The Package provides easier access control.
+We can also have the hidden classes that are not visible outside and are used by the package.
+It is easier to locate the related classes.
+
+7. How many types of packages are there in Java?
+There are two types of packages in Java
+User-defined packages
+Build In packages
+
+8. Explain different data types in Java.
+There are 2 types of data types in Java as mentioned below:
+
+Primitive Data Type
+Non-Primitive Data Type or Object Data type
+Primitive Data Type: Primitive data are single values with no special capabilities. There are 8 primitive data types:
+
+boolean: stores value true or false
+byte: stores an 8-bit signed two’s complement integer
+char: stores a single 16-bit Unicode character
+short: stores a 16-bit signed two’s complement integer
+int: stores a 32-bit signed two’s complement integer
+long: stores a 64-bit two’s complement integer
+float: stores a single-precision 32-bit IEEE 754 floating-point
+double: stores a double-precision 64-bit IEEE 754 floating-point
+Non-Primitive Data Type: Reference Data types will contain a memory address of the variable’s values because it cannot store the values in the memory directly. Types of Non-Primitive are mentioned below:
+
+Strings
+Array
+Class
+Object
+Interface
+
+9. When a byte datatype is used?
+A byte is an 8-bit signed two-complement integer. The minimum value supported by bytes is -128 and 127 is the maximum value. It is used in conditions where we need to save memory and the limit of numbers needed is between -128 to 127.
+
+10. Can we declare Pointer in Java?
+No, Java doesn’t provide the support of Pointer. As Java needed to be more secure because which feature of the pointer is not provided in Java.
+
+11. What is the default value of byte datatype in Java?
+The default value of the byte datatype in Java is 0.
+
+12. What is the default value of float and double datatype in Java?
+The default value of the float is 0.0f and of double is 0.0d in Java.
