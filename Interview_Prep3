@@ -1,0 +1,168 @@
+What are OOPs in Java?
+Object-oriented programming and System (OOPS) concepts in Java are pivotal in simplifying code complexity and fostering reusability. By employing OOP principles, programmers engage with the coding process as if interacting with real-life entities or objects. 
+
+This programming paradigm integrates data and methods within a unified entity known as an object. This consolidation enhances comprehension and facilitates flexibility and code maintenance over extended periods.
+
+According to Statista “Most used programming languages among developers worldwide” survey, Java held a substantial 41.1% share in early 2019.
+
+Java is a programming language that was launched by Sun Microsystems in 1995 and is known for being fast, secure, and reliable. It has greatly changed throughout time, gaining more capability and a wider range of use. The latest Java versions boast numerous enhancements, improving Java application performance, stability, and security.
+
+Object-oriented programming is at the core of Java programming, a methodology for designing programs using classes and objects. OOPs can be described as a means of data control for accessing code. In this approach, programmers define the data type of a data structure, and the operations applied to that data structure.
+
+OOPs Concepts in Java with Examples
+Let’s explore some fundamental Object-Oriented Programming (OOP) concepts in Java with examples:
+
+1) Class and Object:
+A class is a blueprint for creating objects, and an object is an instance of a class.
+
+Example:
+
+// Class definition
+
+class Car {
+
+    String model;
+
+    int year;
+
+    // Constructor
+
+    public Car(String model, int year) {
+
+        this.model = model;
+
+        this.year = year;
+
+    }
+
+}
+
+// Object instantiation
+
+Car myCar = new Car(“Toyota”, 2022);
+
+2) Encapsulation:
+Encapsulation is bundling data (variables) and methods that operate on the data into a single unit (class). Encapsulation, a fundamental concept in Object-Oriented Programming (OOP), bundles data and code into a cohesive unit, shielding them from external interference and misuse. 
+
+This entails concealing the data from other classes, allowing access exclusively through the methods of the current class, a practice commonly referred to as data hiding. The essence of encapsulation lies in creating a protective wrapper that guards the code and data against unauthorized access; all managed through a well-defined interface.
+
+The encapsulation implementation involves declaring variables as private and providing public setter and getter methods for modifying and retrieving variable values. This approach renders the fields of a class either read-only or write-only, fostering control and restricting direct access. Beyond enhancing security, encapsulation contributes to code reusability and facilitates the unit testing of encapsulated code segments, ensuring a robust and well-contained software structure.
+
+Example:
+
+class Student {
+
+    private String name;
+
+    // Getter and setter methods for encapsulation
+
+    public String getName() {
+
+        return name;
+
+    }
+
+    public void setName(String name) {
+
+        this.name = name;
+
+    }
+
+}
+
+3) Inheritance:
+Inheritance allows a new class (subclass or derived class) to inherit attributes and methods from an existing class (superclass or base class). Inheritance is a mechanism where one object obtains the properties of another object, facilitating hierarchical classification. The essence of inheritance lies in the ability to construct new classes based on existing ones. 
+
+When a class inherits from another class, it gains access to the methods and fields of the parent class, fostering code reusability. This relationship establishes a parent-child connection, creating a hierarchy of classes. You can explore a comprehensive free Java inheritance course to delve deeper into this concept.
+
+To illustrate, consider the classification of marine animals. A whale, a specific instance, belongs to the category of marine animals, which, in turn, falls under the broader class of mammals. Mammals are further categorized as animals. This hierarchical classification follows a top-down approach. 
+
+When describing specific attributes of mammals, such as teeth or the nature of their blood, it becomes part of the subclass of animals, with animals being the superclass. The subclass inherits the properties of the superclass, also referred to as the derived class. Meanwhile, the superclass serves as the base or parental class, providing properties for the subclasses to inherit.
+
+Example:
+
+// Base class
+
+class Animal {
+
+    void eat() {
+
+        System.out.println(“Animal is eating”);
+
+    }
+
+}
+
+// Derived class inheriting from Animal
+
+class Dog extends Animal {
+
+    void bark() {
+
+        System.out.println(“Dog is barking”);
+
+    }
+
+}
+
+4) Polymorphism:
+Polymorphism allows objects of different types to be treated as objects of a common type. It includes method overloading and method overriding. Polymorphism, derived from the Greek words “poly” (many) and “morphē” (forms), encompasses a process that executes a single action in various ways. It materializes when multiple classes are interconnected through inheritance. There are two main types of polymorphism: compile-time polymorphism and runtime polymorphism.
+
+Compile-time polymorphism, exemplified by method overloading in Java, occurs when multiple methods share the same name but differ in parameters or types. The determination of which method to invoke is made at compile time.
+
+On the other hand, runtime polymorphism, also known as dynamic method dispatch, resolves a call to an overridden method during runtime rather than compile time. The overridden method is invoked through the reference variable, allowing for flexibility in method execution. Method overloading and method overriding are essential components in achieving polymorphism.
+
+In practice, polymorphism is often summarized as “one interface, multiple methods.” This conceptualization streamlines complexity by enabling a single interface to serve as a general class of action, demonstrating the versatility and adaptability inherent in polymorphic systems.
+
+Example:
+
+// Method overloading
+
+class MathOperations {
+
+    int add(int a, int b) {
+
+        return a + b;
+
+    }
+
+    double add(double a, double b) {
+
+        return a + b;
+
+    }
+
+}
+
+5) Abstraction:
+Abstraction is the process of hiding the implementation details and showing only the necessary features of an object. Abstraction is a procedural concept that focuses on presenting only the essential information while concealing unnecessary details. 
+
+It involves selecting pertinent data from a larger pool of information to showcase only what is required. The primary objective of abstraction is to facilitate data hiding, reducing programming complexity and efforts.
+
+An abstract method is characterized by having a method definition without actual implementation. 
+
+The same data set can be utilized across various applications by employing data abstraction, wherein objects are modeled. This is achieved through the use of abstract classes, which encapsulate generic types of behaviors and establish an object-oriented programming hierarchy.
+
+Abstract methods prove invaluable when multiple subclasses are tasked with performing the same function but in distinct ways and through diverse implementations. Notably, an abstract class can accommodate both abstract and regular methods, offering flexibility and versatility in design and implementation.
+
+Example:
+
+// Abstract class
+
+abstract class Shape {
+
+    abstract void draw(); // Abstract method
+
+}
+
+// Concrete class implementing Shape
+
+class Circle extends Shape {
+
+    void draw() {
+
+        System.out.println(“Drawing a circle”);
+
+    }
+
+}
