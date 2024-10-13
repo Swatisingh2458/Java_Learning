@@ -1,0 +1,109 @@
+Q-1 What is multitasking?
+A multitasking operating system is an operating system that gives you the perception of 2 or more tasks/jobs/processes running at the same time. It does this by dividing system resources amongst these tasks/jobs/processes and switching between the tasks/jobs/processes while they are executing over and over again. Usually, the CPU processes only one task at a time but the switching is so fast that it looks like the CPU is executing multiple processes at a time. They can support either preemptive multitasking, where the OS provides time to applications (virtually all modern OS), or cooperative multitasking, where the OS waits for the program to give back control (Windows 3.x, Mac OS 9, and earlier), leading to hangs and crashes. Also known as Timesharing, multitasking is a logical extension of multiprogramming.
+
+Multitasking programming is of two types which are as follows:
+
+Process-based Multitasking
+Thread-based Multitasking
+
+
+
+Note: Performing multiple tasks at one time is referred to as multithreading in java which is of two types namely Process-based multithreading and Thread based multithreading.
+
+
+Q-2 How can you identify the process?
+Any program which is in a working state is referred to as a process. These processes do have threads that are single dispatchable units.
+
+Q-3 How do you see a thread?
+In order to see threads status let us take windows as an operating system, it illustrates then we’d have ProcessExplorer where you can see GUI shown below for windows operating systems.
+
+This PC > OS > Users > GeeksforGeeks > Downloads > ProcessExplorer
+ProcessExplorer is illustrated below in the windows operating systems
+
+
+
+
+Note: All of them as listed in the above media are the processes as shown above where at a time many are running in parallel to each other henceforth illustrating multiprocessing in the Jwindows operating system.  
+
+
+As we have seen threads do reside in a single process so we have to deep dive into a specific process to see them in order to show users how multithreading is going on in the computers at the backend. For example: let us pick a random process from the above media consisting of various processes say it be ‘chrome’. Now we need to right-click over the process and click the properties’ menu.
+
+
+
+From the above media, it is clearly perceived that chrome is a process and after proceeding with the steps to figure out threads running inside the chrome process we go to properties of the process ‘chrome’ below pictorial output will be generated representing threads running in the process chrome.
+
+
+
+
+Note: If we look scroll way from up to down then it will be seeing some colors against a few of those threads. Here green color threads are associated as the newly created threads and red colors associated threads are representing the closed threads.
+
+
+
+
+
+Note: So for chrome to increase the performance by reducing the response time that is referred to as Thread based multitasking.
+
+
+Q-4 What is Multithreading and How it is Different from Multitasking?
+Multithreading is a specialized form of multitasking. Process-based multitasking refers to executing several tasks simultaneously where each task is a separate independent process is Process-based multitasking. 
+
+Example: Running Java IDE and running TextEdit at the same time. Process-based multitasking is represented by the below pictorial which is as follows:
+
+
+
+Thread-based multitasking refers to executing several tasks simultaneously where each task is a separate independent part of the same program known as a thread. For example, JUnits uses threads to run test cases in parallel. Henceforth, process-based multitasking is a bigger scenario handling process where threads handle the details. It is already discussed to deeper depth already with visual aids.
+
+For more details, please refer to Process-based and Thread-based multitasking in Java 
+
+Q-5 Which Kind of Multitasking is Better and Why?
+Thread-based multitasking is better as multitasking of threads requires less overhead as compared to process multitasking because processes are heavyweight in turn requiring their own separate address space in memory while threads being very light-weight processes and share the same address space as cooperatively shared by heavyweight processes.
+
+Switching is a secondary reason as inter-process communication is expensive and limited. Context switching from one process to another is cost hefty whereas inter-thread communication is inexpensive and context switching from one thread to another is lower in cost. 
+
+
+Note: However java programs make use of process-based multitasking environments, but this feature is not directly under Java’s direct control while multithreading is complete.
+
+
+Q-6 What is a thread?
+Threads are lightweight processes within processes as seen. In java, there are two ways of creating threads namely via Thread class and via Runnable interface.
+
+
+
+To read more about this, please refer Thread class in Java, Runnable interface in Java 
+
+Q-7 What are the different states of a thread, or what is thread lifecycle?
+A thread in Java at any point of time exists in any one of the following states. A thread lies only in one of the shown states at any instant:
+
+New
+Runnable
+Blocked
+Waiting
+Timed Waiting
+Terminated
+
+
+To read more about this, please refer Lifecycle and States of a Thread in Java  
+
+Q-8 What is the task of the main thread?
+All Java programs have at least one thread, known as the main thread which is created by JVM at the program start when the main() method is invoked with the main thread as depicted from the output perceived from pseudo-code illustration.
+
+Illustration:
+
+System.out.println(“Mayank Solanki”);
+Output: Mayank Solanki
+System.out.println(Thread.currentthread().getname()); 
+Output: main
+Q-9 What are the Different Types of threads in Java? 
+There are two types of threads in Java as follows:
+
+User thread
+Daemon thread
+User threads are created by java developers for example Main thread. All threads are created inside the main() method are by default non-daemon thread because the ‘main’ thread is non-daemon. Daemon thread is a low-priority thread that runs in the background to perform tasks such as garbage collection, etc. They do not prevent daemon threads from exiting when all user threads finish their execution. JVM terminates itself when all non-daemon threads finish their execution. JVM does not care whether a thread is running or not, if JVM finds a running daemon thread it terminates the thread and after that shutdown itself.
+
+Q-10 How to Create a User thread?
+As discussed earlier when the JVM starts it creates a main thread over which the program is run unless an additional thread is not created by the user. The first thing “Main” thread looks for ‘public static void main(String [] args)’ method to invoke it as it acts as an entry point to the program. All other threads created in main acts as child threads of the “Main” thread. 
+
+User thread can be implemented in two ways listed below:
+
+Using Thread class by extending java.lang.Thread class.
+Using Runnable Interface by implementing it.
